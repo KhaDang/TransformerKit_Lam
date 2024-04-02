@@ -7,9 +7,9 @@
 
 // Create the object of Adafruit
 Adafruit_PWMServoDriver pwm = Adafruit_PWMServoDriver();
-// Initialize left arms and assign the address of PC9685
+// Initialize left_arms, left_leg and assign the address of PCA9685
 Arms left_arm = Arms(0,1,2);
-Legs left_leg = Legs (10,11,12);
+Legs left_leg = Legs(10,11,12);
 
 
 
@@ -22,15 +22,14 @@ void setup() {
   pwm.setOscillatorFrequency(27000000);
 
   // pass the adafruit-object to left_arm
-  left_arm.delegate = pwm;
+  //left_arm.delegate = pwm;
   left_leg.delegate = pwm;
 
-  
 }
 
 void loop() {
   left_arm.handup();
-  delay(500);
+  //delay(500);
 
   left_leg.leg_up();
   delay(500);
